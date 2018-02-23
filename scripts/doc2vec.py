@@ -14,6 +14,6 @@ model = Doc2Vec(documents= trainings, dm = 1, vector_size=300, window=8, min_cou
 # modelの保存
 model.save("model/train.model")
 
-# モデルを読み込んで、1番目の文と近しい文の類似度を表示
+# モデルを読み込んで、1番目の文と最も近しい文の類似度を表示
 m = Doc2Vec.load('./model/train.model')
 print(m.docvecs.most_similar(0))
