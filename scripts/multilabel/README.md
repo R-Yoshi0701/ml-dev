@@ -1,5 +1,5 @@
 ## 環境構築
-1. [python, scikit-learnのインストール](http://brainvalley.jp/blog/11)
+1. [python3(3.6), scikit-learnのインストール](http://brainvalley.jp/blog/11)
 2. [python3でmecabを使えるようにする](https://qiita.com/taroc/items/b9afd914432da08dafc8)
 3. あとはpip使ってnumpyとかpandasとか足りないものをインストールする
 
