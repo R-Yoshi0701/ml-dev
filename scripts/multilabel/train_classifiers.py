@@ -21,7 +21,7 @@ def download_stopwords(path):
         # Download the file from `url` and save it locally under `file_name`:
         urllib.request.urlretrieve(url, path)
 
-def create_stopwords(file_path):
+def create_stopwords(path):
     stop_words = []
     for w in open(path, "r"):
         w = w.replace('\n','')
