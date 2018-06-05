@@ -1,7 +1,6 @@
-Dockerfile
+./Dockerfile
 run_docker.sh
 scripts/*.ipynb
 model/*
 train_data/*
 .ipynb_checkpoints/*
-
