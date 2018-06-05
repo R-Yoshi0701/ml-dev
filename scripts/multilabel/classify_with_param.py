@@ -1,8 +1,9 @@
 import MeCab
 import sys
-from sklearn.externals import joblib
+import os
+import pdb # pdb.set_trace() でpry的なことができる。
 
-import pdb; # pdb.set_trace() でpry的なことができる。
+from sklearn.externals import joblib
 
 def tokenize(text):
     tokens = []
@@ -18,7 +19,7 @@ def tokenize(text):
 
 def main():
     # 学習モデルロード
-    clf = joblib.load('./learn_data/clf.pkl')
+    clf = joblib.load(os.path.dirname(os.path.abspath(__file__)) + '/learn_data/clf.pkl')
 
     # 分類したいデータのロード
     args = sys.argv
