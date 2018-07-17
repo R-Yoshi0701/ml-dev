@@ -15,7 +15,7 @@ def tokenize(text):
 
 def main():
     # 学習モデルロード
-    clf = joblib.load('clf.pkl')
+    clf = joblib.load('./learn_data/clf.pkl')
 
     # 分類したいデータのロード
     delimiter = "\n"

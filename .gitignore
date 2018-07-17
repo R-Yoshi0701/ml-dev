@@ -1,7 +1,12 @@
-Dockerfile
+./Dockerfile
 run_docker.sh
 scripts/*.ipynb
 model/*
 train_data/*
 .ipynb_checkpoints/*
 
+scripts/multilabel/train_data/*
+scripts/multilabel/learn_data/*
+!scripts/multilabel/train_data/stop_words.txt
+!scripts/multilabel/train_data/.keep
+!scripts/multilabel/learn_data/.keep
