@@ -5,7 +5,7 @@ import pandas as pd
 def main():
 
     #欠損データチェック
-    df = pd.read_csv("train_data.tsv", delimiter='\t')
+    df = pd.read_csv("./train_data/train_data.tsv", delimiter='\t')
     df.info()
 
     #出現頻度チェック(交差検証にかけるので、最低でも出現頻度2以上必要)

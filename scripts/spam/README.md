@@ -34,3 +34,4 @@ CountVectorizer(単語の頻出頻度)とMultinomialNB(ナイーブベイズ)を
 ## ファイル説明
 - data_check.py : ファイル内にhamとspamがどれくらいあるか確認
 - spam_classify.py : 教師データからモデルの作成と推定を行う
+

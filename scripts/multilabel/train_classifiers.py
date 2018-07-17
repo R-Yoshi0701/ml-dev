@@ -21,7 +21,7 @@ def download_stopwords(path):
         # Download the file from `url` and save it locally under `file_name`:
         urllib.request.urlretrieve(url, path)
 
-def create_stopwords(file_path):
+def create_stopwords(path):
     stop_words = []
     for w in open(path, "r"):
         w = w.replace('\n','')
@@ -53,7 +53,7 @@ def grid_search(train_x, train_y, test_x, test_y, genres, parameters, pipeline):
     print
 
     # 保存
-    joblib.dump(clf, 'clf.pkl')
+    joblib.dump(clf, './learn_data/clf.pkl')
 
     # measuring performance on test set
     print("Applying best classifier on test data:")
@@ -63,14 +63,14 @@ def grid_search(train_x, train_y, test_x, test_y, genres, parameters, pipeline):
 
 def main():
 
-    data_df = pd.read_csv("train_data.tsv", delimiter='\t')
+    data_df = pd.read_csv("./train_data/train_data.tsv", delimiter='\t')
     genres = list(data_df.drop(['id', 'title', 'content'], axis=1).columns.values)
 
     data_x = data_df[['content']].as_matrix()
     data_y = data_df.drop(['id', 'title', 'content'], axis=1).as_matrix()
     x_train, x_test, y_train, y_test = train_test_split(data_x,data_y,test_size=0.2, random_state=42)
 
-    path = "stop_words.txt"
+    path = "./learn_data/stop_words.txt"
     download_stopwords(path)
     stop_words = create_stopwords(path)
     pipeline = Pipeline([('tfidf', TfidfVectorizer(stop_words=stop_words, tokenizer=tokenize)), ('clf', OneVsRestClassifier(LinearSVC(), n_jobs=1)),])
