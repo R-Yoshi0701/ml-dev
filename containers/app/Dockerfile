@@ -10,7 +10,8 @@ RUN echo deb http://ftp.de.debian.org/debian testing main >> /etc/apt/sources.li
 RUN apt-get update \
     && apt-get install -y mecab \
        libmecab-dev \
-       mecab-ipadic-utf8
+       mecab-ipadic-utf8 \
+       libicu-dev
 # add liblary
 RUN pip3 install --upgrade pip \
     && pip install scikit-learn \
@@ -18,7 +19,11 @@ RUN pip3 install --upgrade pip \
     pandas \
     matplotlib \
     scipy \
-    mecab-python3
+    mecab-python3 \
+    polyglot \
+    pyicu \
+    pycld2 \
+    morfessor
 
 WORKDIR /ml-dev
 
